@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheryll Amour Datuin | AI UGC Video Editor</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav h2 { font-size: 22px; }
+    nav .links a {
+      margin-left: 18px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 80px 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(56,189,248,0.12);
+      color: #7dd3fc;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .primary { background: #38bdf8; color: #020617; }
+    .secondary { border: 1px solid rgba(255,255,255,0.2); color: #e2e8f0; }
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+    .profile-box h3 { margin-bottom: 14px; }
+    .profile-box p { color: #cbd5e1; font-size: 15px; margin-bottom: 14px; }
+    section { padding: 70px 0; }
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+    .section-subtitle {
+      color: #cbd5e1;
+      max-width: 700px;
+      margin-bottom: 34px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .service h3, .work h3 { margin-bottom: 10px; }
+    .service p, .work p, .about p, li {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tool {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+    .about {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .contact {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(56,189,248,0.16), rgba(168,85,247,0.16));
+      border-radius: 28px;
+      padding: 50px 24px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .contact p {
+      color: #cbd5e1;
+      margin: 12px auto 24px;
+      max-width: 600px;
+    }
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    @media (max-width: 850px) {
+      .hero, .about { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      nav .links a { margin-left: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <h2>Sheryll Amour</h2>
+        <div class="links">
+          <a href="#services">Services</a>
+          <a href="#work">Portfolio</a>
+          <a href="#tools">Tools</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <span class="badge">AI UGC Video Creator • Short-Form Video Editor</span>
+        <h1>I create scroll-stopping AI videos, UGC ads, and short-form content for brands.</h1>
+        <p>
+          I help businesses turn ideas into engaging TikTok, Reels, Shorts, and AI-powered ads using strong hooks,
+          realistic visuals, captions, avatars, B-roll, and conversion-focused editing.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#contact">Hire Me</a>
+          <a class="btn secondary" href="#work">View My Work</a>
+        </div>
+      </div>
+
+      <div class="card profile-box">
+        <h3>What I do best</h3>
+        <p>AI UGC ads, faceless videos, product videos, AI avatars, story-based reels, and social media edits.</p>
+        <p><strong>Best for:</strong> e-commerce brands, coaches, creators, wellness brands, real estate, and startups.</p>
+        <p><strong>Style:</strong> clean, direct-response, social-first, fast-paced, and made for attention.</p>
+      </div>
+    </section>
+
+    <section id="services" class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="section-subtitle">Content support for brands that need consistent, high-quality short-form videos.</p>
+
+      <div class="grid">
+        <div class="card service">
+          <h3>AI UGC Video Ads</h3>
+          <p>Realistic AI spokesperson videos, product demos, testimonials, hooks, captions, and CTA-driven ad edits.</p>
+        </div>
+        <div class="card service">
+          <h3>Short-Form Video Editing</h3>
+          <p>TikTok, Instagram Reels, YouTube Shorts, captions, cuts, zooms, pacing, transitions, and B-roll placement.</p>
+        </div>
+        <div class="card service">
+          <h3>AI Visual Content</h3>
+          <p>AI product images, lifestyle visuals, ad concepts, storyboards, prompt writing, and creative direction.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="container">
+      <h2 class="section-title">Portfolio Highlights</h2>
+      <p class="section-subtitle">Replace the sample buttons below with your Google Drive or Canva portfolio links.</p>
+
+      <div class="grid">
+        <div class="card work">
+          <h3>AI UGC Product Ad</h3>
+          <p>Product-focused ad with AI model, hook, pain point, demo scenes, benefits, and CTA.</p>
+        </div>
+        <div class="card work">
+          <h3>AI Avatar / Clone Video</h3>
+          <p>Talking-head style content using AI avatar tools, voiceover, subtitles, and editing polish.</p>
+        </div>
+        <div class="card work">
+          <h3>Faceless Story Video</h3>
+          <p>Story-based short-form edit using AI visuals, cinematic pacing, captions, and emotional scripting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="container">
+      <h2 class="section-title">Tools I Use</h2>
+      <p class="section-subtitle">My workflow combines AI generation, editing, scripting, and social-first formatting.</p>
+
+      <div class="tools">
+        <span class="tool">CapCut</span>
+        <span class="tool">Canva</span>
+        <span class="tool">Google Veo / Flow</span>
+        <span class="tool">HeyGen</span>
+        <span class="tool">ElevenLabs</span>
+        <span class="tool">Runway</span>
+        <span class="tool">Luma</span>
+        <span class="tool">ChatGPT</span>
+        <span class="tool">Freepik AI</span>
+        <span class="tool">Google Drive</span>
+      </div>
+    </section>
+
+    <section class="container about">
+      <div>
+        <h2 class="section-title">About Me</h2>
+        <p>
+          Hi, I’m Sheryll Amour Datuin, an AI UGC Video Creator and Short-Form Video Editor from the Philippines.
+          I create content for brands that want videos that feel modern, clear, and attention-grabbing.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Why work with me?</h3>
+        <ul>
+          <li>I understand hooks, pacing, captions, and social media attention.</li>
+          <li>I can create videos using AI tools plus manual editing polish.</li>
+          <li>I work well with references, brand guidelines, and test tasks.</li>
+          <li>I’m continuously building portfolio samples to improve speed and quality.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="contact">
+        <h2 class="section-title">Let’s create your next scroll-stopping video.</h2>
+        <p>
+          Need AI UGC ads, short-form edits, avatar videos, or product content? Send me your idea, reference, or script.
+        </p>
+        <a class="btn primary" href="mailto:shedatz22@gmail.com">Email Me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Sheryll Amour Datuin. AI UGC Video Creator & Short-Form Video Editor.</p>
+  </footer>
+</body>
+</html>
