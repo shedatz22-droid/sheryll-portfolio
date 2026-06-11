@@ -3,147 +3,335 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sheryll Amour Datuin | AI UGC Video Editor</title>
+  <title>Sheryll Amour | AI UGC Video Creator</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #070b16;
       color: #f8fafc;
       line-height: 1.6;
     }
     a { color: inherit; text-decoration: none; }
-    .container { width: 90%; max-width: 1100px; margin: auto; }
+    .container { width: 90%; max-width: 1120px; margin: auto; }
     header {
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(7, 11, 22, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     nav {
+      min-height: 72px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
     }
-    nav h2 { font-size: 22px; }
-    nav .links a {
-      margin-left: 18px;
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+    .links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .links a {
       color: #cbd5e1;
       font-size: 14px;
     }
+    .nav-btn {
+      background: #38bdf8;
+      color: #020617 !important;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
     .hero {
-      padding: 80px 0;
+      min-height: 86vh;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 42px;
       align-items: center;
+      padding: 70px 0;
     }
     .badge {
-      display: inline-block;
+      display: inline-flex;
       background: rgba(56,189,248,0.12);
       color: #7dd3fc;
-      padding: 8px 14px;
+      padding: 9px 15px;
+      border: 1px solid rgba(56,189,248,0.24);
       border-radius: 999px;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.05;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
       margin-bottom: 24px;
+    }
+    .gradient {
+      background: linear-gradient(90deg, #38bdf8, #a78bfa, #f0abfc);
+      -webkit-background-clip: text;
+      color: transparent;
     }
     .hero p {
       color: #cbd5e1;
       font-size: 18px;
-      max-width: 650px;
+      max-width: 680px;
       margin-bottom: 28px;
     }
     .buttons {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      margin-bottom: 30px;
     }
     .btn {
       padding: 14px 20px;
-      border-radius: 12px;
-      font-weight: bold;
+      border-radius: 14px;
+      font-weight: 800;
       display: inline-block;
     }
     .primary { background: #38bdf8; color: #020617; }
-    .secondary { border: 1px solid rgba(255,255,255,0.2); color: #e2e8f0; }
-    .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    .secondary { border: 1px solid rgba(255,255,255,0.18); color: #e2e8f0; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 620px;
     }
-    .profile-box h3 { margin-bottom: 14px; }
-    .profile-box p { color: #cbd5e1; font-size: 15px; margin-bottom: 14px; }
-    section { padding: 70px 0; }
+    .stat {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: #f8fafc;
+    }
+    .stat span {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .hero-card {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(56,189,248,0.22), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(168,85,247,0.20), transparent 30%),
+        rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+    .hero-card h3 { font-size: 24px; margin-bottom: 18px; }
+    .check {
+      display: flex;
+      gap: 10px;
+      margin: 14px 0;
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+    .check b { color: #38bdf8; }
+    section { padding: 76px 0; }
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+    .section-kicker {
+      color: #38bdf8;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
     .section-title {
-      font-size: 34px;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
       margin-bottom: 14px;
     }
     .section-subtitle {
       color: #cbd5e1;
-      max-width: 700px;
-      margin-bottom: 34px;
+      font-size: 17px;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
-    .service h3, .work h3 { margin-bottom: 10px; }
-    .service p, .work p, .about p, li {
+    .card {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 24px;
+      padding: 26px;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56,189,248,0.35);
+    }
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(56,189,248,0.12);
+      margin-bottom: 18px;
+      font-size: 22px;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .card p, .card li {
       color: #cbd5e1;
       font-size: 15px;
     }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; }
+    .portfolio-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .portfolio-tag {
+      display: inline-block;
+      color: #7dd3fc;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+    }
+    .portfolio-link {
+      margin-top: 18px;
+      color: #38bdf8;
+      font-weight: 800;
+      font-size: 14px;
+    }
     .tools {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
     .tool {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 10px 14px;
+      background: rgba(255,255,255,0.075);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 11px 15px;
       border-radius: 999px;
       color: #e2e8f0;
       font-size: 14px;
     }
-    .about {
+    .split {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 28px;
       align-items: start;
     }
-    .contact {
-      text-align: center;
-      background: linear-gradient(135deg, rgba(56,189,248,0.16), rgba(168,85,247,0.16));
-      border-radius: 28px;
-      padding: 50px 24px;
+    ul { padding-left: 18px; }
+    li { margin-bottom: 9px; }
+    .cta {
+      background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(168,85,247,0.20));
       border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 32px;
+      padding: 54px 28px;
+      text-align: center;
     }
-    .contact p {
+    .cta p {
       color: #cbd5e1;
-      margin: 12px auto 24px;
-      max-width: 600px;
+      max-width: 680px;
+      margin: 12px auto 26px;
+      font-size: 17px;
     }
     footer {
-      padding: 30px 0;
+      padding: 32px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
       text-align: center;
       color: #94a3b8;
       font-size: 14px;
-      border-top: 1px solid rgba(255,255,255,0.1);
     }
-    @media (max-width: 850px) {
-      .hero, .about { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-      nav .links a { margin-left: 8px; }
+    .note {
+      margin-top: 16px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .contact-link {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #e2e8f0;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .profile-photo-card {
+      position: relative;
+      padding: 10px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.7), rgba(168,85,247,0.55));
+      box-shadow: 0 30px 90px rgba(56,189,248,0.16), 0 0 40px rgba(168,85,247,0.15);
+    }
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .profile-caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(7, 11, 22, 0.76);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .profile-caption strong {
+      display: block;
+      font-size: 16px;
+      color: #f8fafc;
+    }
+    .profile-caption span {
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+    .portfolio-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .portfolio-card {
+      min-height: 190px;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .split { grid-template-columns: 1fr; }
+      .grid, .portfolio-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .links { gap: 10px; }
+      nav { padding: 14px 0; }
     }
   </style>
 </head>
@@ -151,12 +339,13 @@
   <header>
     <div class="container">
       <nav>
-        <h2>Sheryll Amour</h2>
+        <a class="logo" href="#">Sheryll Amour</a>
         <div class="links">
           <a href="#services">Services</a>
-          <a href="#work">Portfolio</a>
+          <a href="#portfolio">Portfolio</a>
           <a href="#tools">Tools</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          <a class="nav-btn" href="mailto:shedatz22@gmail.com">Hire Me</a>
         </div>
       </nav>
     </div>
@@ -165,117 +354,162 @@
   <main>
     <section class="hero container">
       <div>
-        <span class="badge">AI UGC Video Creator • Short-Form Video Editor</span>
-        <h1>I create scroll-stopping AI videos, UGC ads, and short-form content for brands.</h1>
+        <span class="badge">AI UGC Ads • AI Avatars • Short-Form Content</span>
+        <h1>AI videos that make brands look <span class="gradient">modern, human, and scroll-stopping.</span></h1>
         <p>
-          I help businesses turn ideas into engaging TikTok, Reels, Shorts, and AI-powered ads using strong hooks,
-          realistic visuals, captions, avatars, B-roll, and conversion-focused editing.
+          I help brands, creators, and startups create AI UGC ads, AI spokesperson videos,
+          faceless reels, product promos, and short-form content designed for TikTok,
+          Instagram Reels, YouTube Shorts, and paid social.
         </p>
         <div class="buttons">
-          <a class="btn primary" href="#contact">Hire Me</a>
-          <a class="btn secondary" href="#work">View My Work</a>
+          <a class="btn primary" href="https://drive.google.com/drive/folders/1PDvxiLHsQeKMUkMg5Abe1FOOwchpgu_9?usp=sharing" target="_blank">View Portfolio</a>
+          <a class="btn secondary" href="mailto:shedatz22@gmail.com">Hire Me</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>AI UGC</strong>
+            <span>Product ads & testimonials</span>
+          </div>
+          <div class="stat">
+            <strong>9:16</strong>
+            <span>Reels, Shorts & TikTok</span>
+          </div>
+          <div class="stat">
+            <strong>AI + Edit</strong>
+            <span>Prompting, visuals, captions</span>
+          </div>
         </div>
       </div>
 
-      <div class="card profile-box">
-        <h3>What I do best</h3>
-        <p>AI UGC ads, faceless videos, product videos, AI avatars, story-based reels, and social media edits.</p>
-        <p><strong>Best for:</strong> e-commerce brands, coaches, creators, wellness brands, real estate, and startups.</p>
-        <p><strong>Style:</strong> clean, direct-response, social-first, fast-paced, and made for attention.</p>
+      <div class="profile-photo-card">
+        <img class="profile-photo" src="assets/sheryll-profile.jpg" alt="Sheryll Amour Datuin, AI UGC Video Creator and Short-Form Video Editor">
+        <div class="profile-caption">
+          <strong>Sheryll Amour Datuin</strong>
+          <span>AI UGC Video Creator • Short-Form Video Editor</span>
+        </div>
       </div>
     </section>
 
     <section id="services" class="container">
-      <h2 class="section-title">Services</h2>
-      <p class="section-subtitle">Content support for brands that need consistent, high-quality short-form videos.</p>
+      <div class="section-head">
+        <p class="section-kicker">Services</p>
+        <h2 class="section-title">Content built for brands that need attention fast.</h2>
+        <p class="section-subtitle">
+          I combine AI generation, editing, captions, scripting, and visual storytelling to create content that feels current and social-first.
+        </p>
+      </div>
 
       <div class="grid">
-        <div class="card service">
+        <div class="card">
+          <div class="icon">🎬</div>
           <h3>AI UGC Video Ads</h3>
-          <p>Realistic AI spokesperson videos, product demos, testimonials, hooks, captions, and CTA-driven ad edits.</p>
+          <p>UGC-style product videos with strong hooks, problem-solution structure, benefits, demo-style scenes, captions, and calls to action.</p>
         </div>
-        <div class="card service">
-          <h3>Short-Form Video Editing</h3>
-          <p>TikTok, Instagram Reels, YouTube Shorts, captions, cuts, zooms, pacing, transitions, and B-roll placement.</p>
+
+        <div class="card">
+          <div class="icon">🧑‍💻</div>
+          <h3>AI Avatar Videos</h3>
+          <p>AI spokesperson videos using avatar tools, voiceovers, scripts, brand messaging, subtitles, and social-ready formatting.</p>
         </div>
-        <div class="card service">
-          <h3>AI Visual Content</h3>
-          <p>AI product images, lifestyle visuals, ad concepts, storyboards, prompt writing, and creative direction.</p>
+
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>Short-Form Editing</h3>
+          <p>TikTok, Reels, and YouTube Shorts editing with pacing, dynamic cuts, zooms, text overlays, B-roll, music, and retention-focused structure.</p>
         </div>
       </div>
     </section>
 
-    <section id="work" class="container">
-      <h2 class="section-title">Portfolio Highlights</h2>
-      <p class="section-subtitle"></p>
+    <section id="portfolio" class="container">
+      <div class="section-head">
+        <p class="section-kicker">Portfolio</p>
+        <h2 class="section-title">Explore my work by category</h2>
+        <p class="section-subtitle">
+          Click any category below to view the matching Google Drive folder for my AI UGC ads, avatar videos, short-form edits, storytelling, client work, and test samples.
+        </p>
+      </div>
 
-      <div class="grid">
-        <div class="card work">
-          <h3>AI UGC Product Ad</h3>
-          <p>Product-focused ad with AI model, hook, pain point, demo scenes, benefits, and CTA.</p>
-        </div>
-        <div class="card work">
-          <h3>AI Avatar / Clone Video</h3>
-          <p>Talking-head style content using AI avatar tools, voiceover, subtitles, and editing polish.</p>
-        </div>
-        <div class="card work">
-          <h3>Faceless Story Video</h3>
-          <p>Story-based short-form edit using AI visuals, cinematic pacing, captions, and emotional scripting.</p>
-        </div>
+      <div class="grid portfolio-grid">
+        <div class="card portfolio-card"><div><span class="portfolio-tag">Best Work</span><h3>Best Work — Watch First</h3><p>Curated top samples for clients who want to quickly assess my AI video style and editing quality.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/1PDvxiLHsQeKMUkMg5Abe1FOOwchpgu_9?usp=sharing" target="_blank">View Best Work →</a></div>
+        <div class="card portfolio-card"><div><span class="portfolio-tag">AI UGC Ads</span><h3>AI UGC Ads</h3><p>UGC-style product ads with hooks, benefits, captions, demo scenes, and social-first editing.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/11n78KXk8JpCIBpwhS0BbgkMf0vrjOnKG?usp=sharing" target="_blank">View AI UGC Ads →</a></div>
+        <div class="card portfolio-card"><div><span class="portfolio-tag">AI Avatar</span><h3>AI Avatar & Talking Heads</h3><p>AI spokesperson, avatar, clone, and talking-head video samples edited for short-form platforms.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/1EsG4VvBPJmBxAXZVUNiCeICVDPu0qeLr?usp=sharing" target="_blank">View AI Avatar Videos →</a></div>
+        <div class="card portfolio-card"><div><span class="portfolio-tag">Short-Form</span><h3>Short-Form Social Media Content</h3><p>Vertical videos for TikTok, Instagram Reels, and YouTube Shorts with pacing and captions.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/1XmRMdIEv_mZWnWowzf_3xs2oyehjJbeJ?usp=sharing" target="_blank">View Short-Form Work →</a></div>
+        <div class="card portfolio-card"><div><span class="portfolio-tag">Storytelling</span><h3>Storytelling & Cinematic Content</h3><p>Cinematic AI visuals, emotional scene direction, voiceover, and creative storytelling projects.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/1cheatbjkNUXMmU30zL5AsncIPGS5Pda0?usp=sharing" target="_blank">View Storytelling Work →</a></div>
+        <div class="card portfolio-card"><div><span class="portfolio-tag">Educational</span><h3>Educational & Commentary Content</h3><p>Informative videos with clear narration, structured points, readable captions, and B-roll direction.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/1f6bLKbgRQjKplxfcWucbJQZWC8dzvyL7?usp=sharing" target="_blank">View Educational Work →</a></div>
+        <div class="card portfolio-card"><div><span class="portfolio-tag">Client Work</span><h3>Client Projects</h3><p>Delivered client samples and project work that show my ability to follow briefs and deliver outputs.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/1F2G73qHrwyjmA5ASn_tKK6GbQdf_l-eh?usp=sharing" target="_blank">View Client Projects →</a></div>
+        <div class="card portfolio-card"><div><span class="portfolio-tag">Test Samples</span><h3>Test Projects & Samples</h3><p>Test tasks, practice edits, and sample projects created to strengthen speed, quality, and range.</p></div><a class="portfolio-link" href="https://drive.google.com/drive/folders/1Mt_tlJG7t_bBahM_X67BWE60ipgRxz39?usp=sharing" target="_blank">View Test Samples →</a></div>
       </div>
     </section>
 
     <section id="tools" class="container">
-      <h2 class="section-title">Tools I Use</h2>
-      <p class="section-subtitle">My workflow combines AI generation, editing, scripting, and social-first formatting.</p>
+      <div class="section-head">
+        <p class="section-kicker">Workflow</p>
+        <h2 class="section-title">AI tools + editing polish</h2>
+        <p class="section-subtitle">
+          My workflow combines prompt writing, AI video/image generation, avatar creation, voiceover, and manual editing.
+        </p>
+      </div>
 
       <div class="tools">
-        <span class="tool">CapCut</span>
-        <span class="tool">Canva</span>
         <span class="tool">Google Veo / Flow</span>
         <span class="tool">HeyGen</span>
+        <span class="tool">CapCut</span>
+        <span class="tool">Canva</span>
         <span class="tool">ElevenLabs</span>
-        <span class="tool">Runway</span>
-        <span class="tool">Luma</span>
-        <span class="tool">ChatGPT</span>
         <span class="tool">Freepik AI</span>
+        <span class="tool">ChatGPT</span>
         <span class="tool">Google Drive</span>
+        <span class="tool">GitHub Pages</span>
       </div>
     </section>
 
-    <section class="container about">
-      <div>
-        <h2 class="section-title">About Me</h2>
-        <p>
-          Hi, I’m Sheryll Amour Datuin, an AI UGC Video Creator and Short-Form Video Editor from the Philippines.
-          I create content for brands that want videos that feel modern, clear, and attention-grabbing.
-        </p>
-      </div>
+    <section id="about" class="container">
+      <div class="split">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2 class="section-title">Hi, I’m Sheryll.</h2>
+          <p class="section-subtitle">
+            I’m an AI UGC Video Creator and Short-Form Video Editor from the Philippines.
+            I help brands create modern, engaging, and social-ready videos using AI tools and editing strategy.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3>Why work with me?</h3>
-        <ul>
-          <li>I understand hooks, pacing, captions, and social media attention.</li>
-          <li>I can create videos using AI tools plus manual editing polish.</li>
-          <li>I work well with references, brand guidelines, and test tasks.</li>
-          <li>I’m continuously building portfolio samples to improve speed and quality.</li>
-        </ul>
+        <div class="card">
+          <h3>Why clients can work with me</h3>
+          <ul>
+            <li>I understand hooks, pacing, captions, and short-form attention.</li>
+            <li>I can create content from scripts, references, product ideas, or brand guidelines.</li>
+            <li>I use AI tools to generate visuals, avatars, voiceovers, and ad concepts faster.</li>
+            <li>I’m focused on AI UGC ads, product videos, faceless content, and short-form editing.</li>
+            <li>I’m available for freelance projects, test tasks, and long-term collaborations.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="container">
-      <div class="contact">
-        <h2 class="section-title">Let’s create your next scroll-stopping video.</h2>
+    <section class="container">
+      <div class="cta">
+        <p class="section-kicker">Let’s work</p>
+        <h2 class="section-title">Need AI UGC videos or short-form ads?</h2>
         <p>
-          Need AI UGC ads, short-form edits, avatar videos, or product content? Send me your idea, reference, or script.
+          Send me your product, script, reference video, or idea. I can help turn it into a scroll-stopping video for your brand.
         </p>
-        <a class="btn primary" href="mailto:shedatz22@gmail.com">Email Me</a>
+        <div class="buttons" style="justify-content:center; margin-bottom:0;">
+          <a class="btn primary" href="mailto:shedatz22@gmail.com">Email Me</a>
+          <a class="btn secondary" href="https://drive.google.com/drive/folders/1PDvxiLHsQeKMUkMg5Abe1FOOwchpgu_9?usp=sharing" target="_blank">View Samples</a>
+        </div>
+        <p class="note">Email: shedatz22@gmail.com</p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.linkedin.com/in/sheryll-amour-datuin-240203222" target="_blank">🔗 LinkedIn</a>
+          <a class="contact-link" href="https://drive.google.com/drive/folders/1PDvxiLHsQeKMUkMg5Abe1FOOwchpgu_9?usp=sharing" target="_blank">📁 Best Work Portfolio</a>
+          <a class="contact-link" href="https://charidelamolar.my.canva.site/sheryll-amour-portfolio" target="_blank">🎨 Canva Portfolio</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Sheryll Amour Datuin. AI UGC Video Creator & Short-Form Video Editor.</p>
+    <p>© 2026 Sheryll Amour Datuin — AI UGC Video Creator & Short-Form Video Editor</p>
   </footer>
 </body>
 </html>
